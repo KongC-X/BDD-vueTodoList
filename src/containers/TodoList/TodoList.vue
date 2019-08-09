@@ -1,18 +1,30 @@
 <template>
   <div>
     <h1>TodoList</h1>
-    <todo-header></todo-header>
+    <todo-header @add="addUndoItem"></todo-header>
+    <ul>
+      <li v-for="item in undoList" :key="item">{{item}}</li>
+    </ul>
   </div>
 </template>
 
 <script>
 import TodoHeader from './components/Header.vue'
 export default {
-  name: 'Header',
+  name: 'TodoList',
   components: {
     TodoHeader
   },
-  props: {}
+  data () {
+    return {
+      undoList: []
+    }
+  },
+  methods: {
+    addUndoItem (inputValue) {
+      this.undoList.push(inputValue)
+    }
+  }
 }
 </script>
 
