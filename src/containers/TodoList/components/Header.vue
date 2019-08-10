@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <input
-        type="text"
-        data-test="input"
-        v-model="inputValue"
-        @keyup.enter="addTodoItem"
-    >
+  <div class="header">
+    <div class="header-content">
+      TodoList
+      <input
+          type="text"
+          data-test="input"
+          class="header-inputq"
+          v-model="inputValue"
+          @keyup.enter="addTodoItem"
+      >
+    </div>
   </div>
 </template>
 
@@ -30,4 +34,22 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-</style>
+.header
+  background: #333
+  line-height: 60px
+  .header-content
+    width: 600px
+    margin: 0 auto
+    font-size: 30px
+    color: #fff
+    .header-input
+      float: right
+      margin-top: 5px
+      outlint: none
+      border-radius: 5px
+      width: 75%
+      padding: 10px
+      font-size: 20px
+      text-indent: 2em
+      color: #333
+</style> 

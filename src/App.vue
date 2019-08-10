@@ -13,10 +13,13 @@ export default {
     TodoList
   },
   data () {
-    return {
-
-    }
+    return {}
   }
 }
 </script>
-<style lang="stylus"></style>
+<style lang="stylus">
+* {
+  margin: 0;
+  padding: 0;
+}
+</style>

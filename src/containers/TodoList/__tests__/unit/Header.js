@@ -38,4 +38,9 @@ describe('Header 测试', () => {
     expect(wrapper.emitted().add).toBeTruthy()
     expect(wrapper.vm.$data.inputValue).toBe('')
   })
+
+  it('Header 默认UI快照 测试', () => {
+    const wrapper = shallowMount(Header)
+    expect(wrapper).toMatchSnapshot()
+  })
 })
