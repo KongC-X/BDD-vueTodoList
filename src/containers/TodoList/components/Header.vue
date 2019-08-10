@@ -5,7 +5,7 @@
       <input
           type="text"
           data-test="input"
-          class="header-inputq"
+          class="header-input"
           v-model="inputValue"
           @keyup.enter="addTodoItem"
       >
