@@ -6,6 +6,7 @@
           type="text"
           data-test="input"
           class="header-input"
+          placeholder="Add TodoItem"
           v-model="inputValue"
           @keyup.enter="addTodoItem"
       >
