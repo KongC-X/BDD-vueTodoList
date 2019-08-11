@@ -3,7 +3,7 @@ import UndoList from '../../components/UndoList.vue'
 import { findTestWrapper } from '@/utils/testUtil.js'
 
 describe('UndoList 测试', () => {
-  it('UndoList list 为 [], count 为 0, list items 长度为 0', () => {
+  it('参数 list 为 [], count 为 0, list 长度为 0', () => {
     const wrapper = shallowMount(UndoList, {
       propsData: { list: [] }
     })
@@ -13,7 +13,7 @@ describe('UndoList 测试', () => {
     expect(listItems.length).toEqual(0)
   })
 
-  it('UndoList list 为 [1,2,3], count 为 3, list item 长度为3，并且包含删除按钮 ', () => {
+  it('参数 list 为 [1,2,3], count 为 3, list 长度为3，并且包含删除按钮 ', () => {
     const wrapper = shallowMount(UndoList, {
       propsData: { list: [1, 2, 3] }
     })
@@ -25,12 +25,13 @@ describe('UndoList 测试', () => {
     expect(deleteButtons.length).toEqual(3)
   })
 
-  it('UndoList 点击删除按钮，向外发射delete事件 ', () => {
+  it('点击删除按钮，向外发射delete事件 ', () => {
     const wrapper = shallowMount(UndoList, {
       propsData: { list: [1, 2, 3] }
     })
     const deleteButton = findTestWrapper(wrapper, 'button').at(1)
     deleteButton.trigger('click')
     expect(wrapper.emitted().delete).toBeTruthy()
+    expect(wrapper.emitted().delete[0][0]).toBe(1)
   })
 })

@@ -22,4 +22,10 @@ export default {
   margin: 0;
   padding: 0;
 }
+body {
+  background: #cdcdcd;
+}
+ul {
+  list-style: none;
+}
 </style>
