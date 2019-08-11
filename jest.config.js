@@ -29,5 +29,6 @@ module.exports = {
   ],
   testPathIgnorePatterns: [
     '\.eslintrc\.js'
-  ]
+  ],
+  collectCoverageFrom: ['**/*.{js,vue}', '!**/node_modules/**']
 }
