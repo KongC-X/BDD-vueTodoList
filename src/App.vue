@@ -1,22 +1,20 @@
 <template>
   <div id="app">
-    <TodoList/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import TodoList from './containers/TodoList/TodoList.vue'
 
 export default {
   name: 'app',
-  components: {
-    TodoList
-  },
+  components: {},
   data () {
     return {}
   }
 }
 </script>
+
 <style lang="stylus">
 * {
   margin: 0;
