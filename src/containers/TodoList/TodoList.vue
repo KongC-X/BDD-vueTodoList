@@ -27,13 +27,11 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-      axios.get('/getUndoList.json').then((res) => {
-        this.undoList = res.data
-      }).catch(e => {
-        console.log(e)
-      })
-    }, 4000)
+    axios.get('/getUndoList.json').then((res) => {
+      this.undoList = res.data
+    }).catch(e => {
+      // console.log(e)
+    })
   },
   methods: {
     addUndoItem (inputValue) {

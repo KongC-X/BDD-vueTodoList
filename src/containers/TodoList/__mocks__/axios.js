@@ -10,7 +10,11 @@ export default {
   get (url) {
     if (url === '/getUndoList.json') {
       return new Promise((resolve, reject) => {
-        resolve(undoList)
+        if (this.success) {
+          resolve(undoList)
+        } else {
+          reject(new Error())
+        }
       })
     }
   }
