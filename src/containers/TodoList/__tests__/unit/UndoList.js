@@ -15,7 +15,11 @@ describe('UndoList 测试', () => {
 
   it('参数 list 为 [1,2,3], count 为 3, list 长度为3，并且包含删除按钮 ', () => {
     const wrapper = shallowMount(UndoList, {
-      propsData: { list: [1, 2, 3] }
+      propsData: { list: [
+        { status: 'div', value: 1 },
+        { status: 'div', value: 2 },
+        { status: 'div', value: 3 }
+      ] }
     })
     const countEl = findTestWrapper(wrapper, 'count')
     const listItems = findTestWrapper(wrapper, 'item')
@@ -27,7 +31,11 @@ describe('UndoList 测试', () => {
 
   it('点击删除按钮，向外发射delete事件 ', () => {
     const wrapper = shallowMount(UndoList, {
-      propsData: { list: [1, 2, 3] }
+      propsData: { list: [
+        { status: 'div', value: 1 },
+        { status: 'div', value: 2 },
+        { status: 'div', value: 3 }
+      ] }
     })
     const deleteButton = findTestWrapper(wrapper, 'button').at(1)
     deleteButton.trigger('click')
