@@ -12,7 +12,7 @@ describe('TodoList 测试', () => {
 
   it('初始时, undoList为空', () => {
     const wrapper = shallowMount(TodoList)
-    const undoList = wrapper.vm.$data.undoList
+    const undoList = wrapper.vm.undoList
     expect(undoList).toEqual([])
   })
 
@@ -26,7 +26,7 @@ describe('TodoList 测试', () => {
       ]
     })
     wrapper.vm.addUndoItem(4)
-    expect(wrapper.vm.$data.undoList).toEqual([
+    expect(wrapper.vm.undoList).toEqual([
       { status: 'div', value: 1 },
       { status: 'div', value: 2 },
       { status: 'div', value: 3 },
@@ -51,7 +51,7 @@ describe('TodoList 测试', () => {
       ]
     })
     wrapper.vm.handleDeleteItem(1)
-    expect(wrapper.vm.$data.undoList).toEqual([
+    expect(wrapper.vm.undoList).toEqual([
       { status: 'div', value: 1 },
       { status: 'div', value: 3 }
     ])
@@ -67,7 +67,7 @@ describe('TodoList 测试', () => {
       ]
     })
     wrapper.vm.changeStatus(1)
-    expect(wrapper.vm.$data.undoList).toEqual([
+    expect(wrapper.vm.undoList).toEqual([
       { status: 'div', value: 1 },
       { status: 'input', value: 2 },
       { status: 'div', value: 3 }
@@ -84,7 +84,7 @@ describe('TodoList 测试', () => {
       ]
     })
     wrapper.vm.resetStatus()
-    expect(wrapper.vm.$data.undoList).toEqual([
+    expect(wrapper.vm.undoList).toEqual([
       { status: 'div', value: 1 },
       { status: 'div', value: 2 },
       { status: 'div', value: 3 }
@@ -101,7 +101,7 @@ describe('TodoList 测试', () => {
       ]
     })
     wrapper.vm.changeItemValue({ index: 1, value: 100 })
-    expect(wrapper.vm.$data.undoList).toEqual([
+    expect(wrapper.vm.undoList).toEqual([
       { status: 'div', value: 1 },
       { status: 'input', value: 100 },
       { status: 'div', value: 3 }
