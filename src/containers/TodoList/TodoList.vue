@@ -1,7 +1,12 @@
 <template>
   <div>
     <todo-header @add="addUndoItem"></todo-header>
-    <undo-list :list="undoList" @delete="handleDeleteItem"></undo-list>
+    <undo-list 
+      :list="undoList" 
+      @delete="handleDeleteItem" 
+      @status="changeStatus"
+      @reset="resetStatus"
+    ></undo-list>
   </div>
 </template>
 
@@ -29,6 +34,15 @@ export default {
     },
     handleDeleteItem (index) {
       this.undoList.splice(index, 1)
+    },
+    changeStatus (index) {
+      this.undoList = this.undoList.map((item, idx) => ({ value: item.value, status: idx === index ? 'input' : 'div' }))
+    },
+    resetStatus () {
+      this.undoList = this.undoList.map(item => ({ value: item.value, status: 'div' }))
+    },
+    changeItemValue ({ index, value }) {
+      this.undoList[index].value = value
     }
   }
 }
