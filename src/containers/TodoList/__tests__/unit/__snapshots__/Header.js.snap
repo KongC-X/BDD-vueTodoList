@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Header 测试 UI快照 1`] = `
-<div class="header">
-  <div class="header-content">
-    TodoList
-    <input type="text" data-test="input" placeholder="Add TodoItem" class="header-input"></div>
-</div>
-`;

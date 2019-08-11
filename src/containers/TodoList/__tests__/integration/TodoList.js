@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import TodoList from '../../TodoList'
 import { findTestWrapper } from '../../../../utils/testUtil'
+import store from '../../../../store'
 
 describe('BDD TodoList Test', () => {
   it(`
@@ -8,7 +9,7 @@ describe('BDD TodoList Test', () => {
     2. 用户会点击回车按钮
     3. 列表项应该增加用户输入内容的列表项
   `, () => {
-    const wrapper = mount(TodoList)
+    const wrapper = mount(TodoList, { store })
     const inputEl = findTestWrapper(wrapper, 'input')
     const content = 'garen'
     inputEl.setValue(content)
