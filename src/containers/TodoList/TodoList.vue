@@ -1,9 +1,9 @@
 <template>
   <div>
     <todo-header @add="addUndoItem"></todo-header>
-    <undo-list 
-      :list="undoList" 
-      @delete="handleDeleteItem" 
+    <undo-list
+      :list="undoList"
+      @delete="handleDeleteItem"
       @status="changeStatus"
       @reset="resetStatus"
     ></undo-list>

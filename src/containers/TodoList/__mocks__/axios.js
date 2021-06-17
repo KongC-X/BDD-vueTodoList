@@ -1,8 +1,8 @@
 const undoList = {
   success: true,
   data: [
-    { status: 'div', value: 'garen' },
-    { status: 'div', value: 'wang' }
+    { status: 'div', value: 'zhang' },
+    { status: 'div', value: 'yiming' }
   ]
 }
 

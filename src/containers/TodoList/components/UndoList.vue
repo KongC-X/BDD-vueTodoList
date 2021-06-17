@@ -5,26 +5,26 @@
           <span class="count" data-test="count">{{list.length}}</span>
       </div>
       <ul>
-          <li 
-            v-for="(item, index) in list" 
+          <li
+            v-for="(item, index) in list"
             :key="index"
             data-test="item"
             class="item"
             @click="changeStatus(index)"
           >
-            <input 
-                v-if="item.status === 'input'" 
+            <input
+                v-if="item.status === 'input'"
                 data-test="input"
                 :value="item.value"
                 @blur="handleInputBlur"
                 @change="handleInputChange($event, index)"
             >
             <span v-else>{{item.value}}</span>
-            <span 
-                data-test="button" 
-                @click="handleDelete(index)" 
+            <span
+                data-test="button"
+                @click="handleDelete(index)"
                 class="delete"
-            >X</span>  
+            >-</span>
           </li>
       </ul>
   </div>
@@ -39,10 +39,10 @@ export default {
       this.$emit('delete', index)
     },
     changeStatus (index) {
-      this.$emit('status', index)  
+      this.$emit('status', index)
     },
     handleInputBlur () {
-      this.$emit('reset')  
+      this.$emit('reset')
     },
     handleInputChange (e, index) {
       this.$emit('change', { index, value: e.target.value })
@@ -53,50 +53,59 @@ export default {
 
 <style scoped lang="stylus">
 .undolist {
-    width: 600px;
-    margin: 0 auto;
+  width: 600px;
+  margin 0 auto
 }
 .title {
-    line-height: 30px;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 10px 0;
+  margin 10px 0
+  line-height 30px
+  font-size 24px
+  font-weight bold
 }
 .count {
-    margin-top: 5px;
-    float: right;
-    display: block;
-    width: 20px;
-    line-height: 20px;
-    height: 20px;
-    background: #e6e6e6;
-    border-radius: 10px;
-    color: #000;
-    font-size: 12px;
-    text-align: center;
+  margin-top 5px
+  float right
+  display block
+  width 20px
+  height:20px
+  line-height 20px
+  text-align center
+  background #e6e6e6
+  border-radius 10px
+  font-size 12px
+  color #000
+}
+.list{
+ list-style-type none
 }
 .item {
-    line-height: 32px;
-    font-size: 14px;
-    border-left: 5px solid #629a9a;
-    background: #fff;
-    margin-bottom: 10px;
-    border-radius: 2px;
-    padding-left: 10px;
+  margin-bottom 10px
+  line-height 32px
+  font-size 14px
+  background #FFF
+  border-left 5px solid #629A9A
+  border-radius 3px
+  text-indent 10px
 }
-.delete {
-    margin-top: 5px;
-    margin-right: 10px;
-    float: right;
-    display: block;
-    width: 20px;
-    line-height: 20px;
-    height: 20px;
-    background: #e6e6e6;
-    border-radius: 10px;
-    color: #000;
-    font-size: 12px;
-    text-align: center;
-    cursor: pointer;
+.delete{
+  display block
+  float right
+  margin-top 5px
+  margin-right 10px
+  width 20px
+  height:20px
+  line-height 20px
+  text-align center
+  background #e6e6e6
+  border-radius 10px
+  font-size 12px
+  color #000
+  text-indent 0px
+  cursor pointer
 }
-</style> 
+.inputs {
+  width 460px
+  height 24px
+  text-indent 10px
+}
+</style>

@@ -5,6 +5,7 @@ import store from '../../../../store'
 import axios from '../../__mocks__/axios'
 
 beforeEach(() => {
+  axios.success = true
   jest.useFakeTimers()
 })
 
@@ -18,11 +19,11 @@ describe('BDD TodoList Test', () => {
     const inputEl = findTestWrapper(wrapper, 'input')
     const content = 'garen'
     inputEl.setValue(content)
-    inputEl.trigger('change') 
+    inputEl.trigger('change')
     inputEl.trigger('keyup.enter')
     const listItems = findTestWrapper(wrapper, 'item')
     expect(listItems.length).toBe(1)
-    expect(listItems.at(0).text()).toContain(content)  
+    expect(listItems.at(0).text()).toContain(content)
   })
 
   it(`
@@ -61,6 +62,6 @@ describe('BDD TodoList Test', () => {
   //   wrapper.vm.$nextTick(() => {
   //     const listItems = findTestWrapper(wrapper, 'item')
   //     expect(listItems.length).toBe(2)
-  //   }) 
+  //   })
   // })
 })

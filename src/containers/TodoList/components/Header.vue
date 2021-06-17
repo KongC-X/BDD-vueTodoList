@@ -29,7 +29,7 @@ export default {
     addTodoItem () {
       if (this.inputValue) {
         this.$emit('add', this.inputValue)
-        this.changeInputValue('') 
+        this.changeInputValue('')
       }
     },
     ...mapMutations({
@@ -39,23 +39,26 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus">
-.header
-  background: #333
-  line-height: 60px
-  .header-content
-    width: 600px
-    margin: 0 auto
-    font-size: 30px
-    color: #fff
-    .header-input
-      float: right
-      margin-top: 5px
-      outlint: none
-      border-radius: 5px
-      width: 75%
-      padding: 10px
-      font-size: 20px
-      text-indent: 2em
-      color: #333
-</style> 
+<style lang="stylus" scoped>
+.header{
+  line-height 60px
+  background #333
+}
+.header-content{
+  width 600px
+  margin 0 auto
+  color #ffffff
+  font-size 28px
+}
+.header-input{
+  float right
+  width 360px
+  margin-top 16px
+  line-height 24px
+  border-radius 5px
+  outline none
+  color #333
+  text-indent: 2em
+  text-indent 10px
+}
+</style>
